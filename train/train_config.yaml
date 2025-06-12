@@ -1,0 +1,52 @@
+# LlamaFactory training configuration
+stage: dpo
+do_train: true
+
+# Model settings
+model_name_or_path: FreedomIntelligence/HuatuoGPT-o1-8B
+template_name: llama3
+finetuning_type: lora
+flash_attn: auto
+trust_remote_code: true
+
+# Dataset settings
+dataset_dir: data
+dataset: Med-REFL_ALL
+cutoff_len: 5000
+max_samples: 100000
+preprocessing_num_workers: 16
+packing: false
+
+# Training hyperparameters
+learning_rate: 1.0e-5
+num_train_epochs: 1.0
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 16
+lr_scheduler_type: cosine
+max_grad_norm: 1.0
+warmup_steps: 10
+optim: adamw_torch
+bf16: true
+include_num_input_tokens_seen: true
+
+# LoRA-specific settings
+lora_rank: 64
+lora_alpha: 16
+lora_dropout: 0
+lora_target: all
+
+# DPO-specific settings
+pref_beta: 0.1
+pref_ftx: 0
+pref_loss: sigmoid
+
+# Logging and saving
+logging_steps: 1
+save_steps: 1000
+output_dir: saves/Huatuo-o1-continue/lora/Huatuo-DataAll
+plot_loss: true
+report_to: none
+
+# Distributed training settings
+ddp_timeout: 180000000
+deepspeed: cache/ds_z3_config.json
