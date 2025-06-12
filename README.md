@@ -83,7 +83,7 @@ Our DPO dataset is hosted on the Hugging Face Hub and includes the following com
             <th>Category</th>
             <th>Model</th>
             <th>Original</th>
-            <th><strong>Med-REFL</strong></th>
+            <th><strong>+ Med-REFL</strong></th>
         </tr>
     </thead>
     <tbody>
