@@ -225,4 +225,4 @@ If you use our code, data, or weights in your research, please consider citing o
 ```
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=TianYin123/Med-REFL&type=Date)](https://star-history.com/#TianYin123/Med-REFL&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=TianYin123/Med-REFL&type=Date)](https://www.star-history.com/#TianYin123/Med-REFL&Date)
