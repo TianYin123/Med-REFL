@@ -1,7 +1,7 @@
 # Med-REFL: Medical Reasoning Enhancement via Self-Corrected Fine-grained Reflection
 
 <p align="center">
-    📃 <a href="https://arxiv.org/abs/2504.12334" target="_blank">Paper</a> │ 📚 <a href="https://huggingface.co/datasets/HANI-LAB/Med-REFL-DPO" target="_blank">Dataset</a> │ 🤗 <a href="https://huggingface.co/HANI-LAB/Med-REFL-Llama-3.1-8B-lora" target="_blank">LoRA Weights</a> 
+    📃 <a href="https://arxiv.org/abs/2506.13793" target="_blank">Paper</a> │ 📚 <a href="https://huggingface.co/datasets/HANI-LAB/Med-REFL-DPO" target="_blank">Dataset</a> │ 🤗 <a href="https://huggingface.co/HANI-LAB/Med-REFL-Llama-3.1-8B-lora" target="_blank">LoRA Weights</a> 
 </p>
 
 ## 🚀 Updates
@@ -221,7 +221,15 @@ After generating the answers, run the `evaluate-verification.py` script to autom
 ## 📖 Citation
 If you use our code, data, or weights in your research, please consider citing our paper:
 ```
-
+@misc{yang2025medreflmedicalreasoningenhancement,
+      title={Med-REFL: Medical Reasoning Enhancement via Self-Corrected Fine-grained Reflection}, 
+      author={Zongxian Yang and Jiayu Qian and Zegao Peng and Haoyu Zhang and Zhi-An Huang},
+      year={2025},
+      eprint={2506.13793},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2506.13793}, 
+}
 ```
 ## Star History
 
