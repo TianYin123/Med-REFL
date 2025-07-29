@@ -8,7 +8,7 @@ from vllm.lora.request import LoRARequest
 # --- Configuration Constants ---
 # Model and Adapter Paths
 BASE_MODEL_PATH = "FreedomIntelligence/HuatuoGPT-o1-8B"
-ADAPTER_PATH = "HANI_LAB/Med-REFL-huatuo-o1"
+ADAPTER_PATH = "HANI-LAB/Med-REFL-huatuo-o1"
 ADAPTER_NAME = "med_refl_adapter"
 
 # Data and Output Paths
@@ -21,10 +21,7 @@ MAX_NEW_TOKENS = 8192
 REPETITION_PENALTY = 1.1
 
 # System prompt for the model
-SYSTEM_PROMPT = """You are a helpful medical expert specializing in USMLE exam questions, and your task is to answer a multi-choice medical question. Please first think step-by-step and then choose the answer from the provided options. Your responses will be used for research purposes only, so please have a definite answer.
-Provide your response in the following JSON format:
-{"reason": "Step-by-step explanation of your thought process","answer": "Chosen answer from the given options"}
-"""
+SYSTEM_PROMPT = """Please first think step by step to answer the following multiple-choice questions, then ensuring your response concludes with the correct option in the format: 'The answer is X(Option Letter).'."""
 
 
 # --- Data Handling and Formatting Functions ---
