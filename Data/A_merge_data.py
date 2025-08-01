@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-merge_array_parts.py
-Merges all JSON parts located in the same directory as this script.
-Each part must be named <prefix>-partN.json (case-insensitive) and contain
-a top-level array.  The arrays are concatenated in ascending part-number order
-to recreate <prefix>.json.
-"""
-
 import json
 import os
 import re
