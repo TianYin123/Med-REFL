@@ -1,12 +1,5 @@
-# Med-REFL: Medical Reasoning Enhancement via Self-Corrected Fine-grained Reflection
+# Med-REFL: Enhancing Complex Reasoning via Fine-grained Self-Correction
 
-<p align="center">
-    📃 <a href="https://arxiv.org/abs/2506.13793" target="_blank">Paper</a> │ 📚 <a href="https://huggingface.co/datasets/HANI-LAB/Med-REFL-DPO" target="_blank">Dataset</a> │ 🤗 <a href="https://huggingface.co/HANI-LAB/Med-REFL-Llama-3.1-8B-lora" target="_blank">LoRA Weights</a> 
-</p>
-
-## 🚀 Updates
-* **[June 12, 2025]** We have open-sourced the Med-REFL DPO dataset, all corresponding LoRA weights, and the evaluation code.
-* **[Upcoming]** The data generation scripts are currently being refactored and are expected to be released in September 2025.
 
 ## ⚡ Introduction
 
@@ -14,59 +7,6 @@
 
 Diverging from traditional methods, Med-REFL focuses on improving the model's **internal reflection process**. It leverages the Tree-of-Thought (ToT) paradigm to explore diverse reasoning pathways and automatically constructs a high-quality Direct Preference Optimization (DPO) dataset. This approach trains the model to identify flaws in its own reasoning and perform self-correction, thereby boosting accuracy and reliability on complex medical problems without the need for expensive expert annotation.
 
-<div align=center>
-<img src="https://github.com/TianYin123/Med-REFL/blob/80415f3ce30cad956f9ec308fb82d827a3d5eb79/Method_Main.png"  width="90%" alt="Med-REFL Concept" align=center/>
-</div>
-<p align="center">
-<em>The Med-REFL framework enhances model reasoning through self-corrected, fine-grained reflection.</em>
-</p>
-
-## 🧩 Assets
-We have open-sourced all LoRA weights and the DPO dataset generated using the Med-REFL framework.
-
-### LoRA Weights
-Apply our LoRA weights to the following base models to significantly improve their medical reasoning performance.
-
-| LoRA for Base Model        | Backbone     | Link                                                         |
-| :------------------------- | :----------- | :------------------------------------------------------------------------ |
-| **Med-REFL for Llama-3.1-8B** | Llama-3.1-8B | [🤗](https://huggingface.co/HANI-LAB/Med-REFL-Llama-3.1-8B-lora)     |
-| **Med-REFL for Qwen2.5-7B** | Qwen2.5-7B   | [🤗](https://huggingface.co/HANI-LAB/Med-REFL-Qwen2.5-7B-lora)       |
-| **Med-REFL for Huatuo-o1-8B** | Huatuo-o1-8B | [🤗](https://huggingface.co/HANI-LAB/Med-REFL-Huatuo-o1-8B-lora)     |
-| **Med-REFL for MedReason-8B** | MedReason-8B | [🤗](https://huggingface.co/HANI-LAB/Med-REFL-MedReason-8B-lora)     |
-
-### DPO Dataset
-Our DPO dataset is hosted on the Hugging Face Hub and includes the following components:
-<table>
-    <thead>
-        <tr>
-            <th>Data Component</th>
-            <th>Sub-Component</th>
-            <th>Description</th>
-            <th>Link</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2"><strong>Med-REFL</strong></td>
-            <td>Reasoning Enhancement</td>
-            <td>Contains ~12,000 preference pairs contrasting correct reasoning paths with plausible but incorrect ones to improve general reasoning discernment.</td>
-            <td rowspan="4" align="center"><a href="https://huggingface.co/datasets/HANI-LAB/Med-REFL-DPO" target="_blank">🤗</a></td>
-        </tr>
-        <tr>
-            <td>Reflection Enhancement</td>
-            <td>Contains ~21,000 preference pairs designed to train error detection and self-correction by distinguishing effective reflections from flawed ones.</td>
-        </tr>
-        <tr>
-            <td rowspan="2"><strong>Ablation Study Data</strong></td>
-            <td>Huatuo-o1 Random CoT</td>
-            <td>Random rollout Chain-of-Thought pairs used in ablation studies to benchmark against the main Med-REFL data, generated for the Huatuo-o1 model.</td>
-        </tr>
-        <tr>
-            <td>Llama3.1-8b Random CoT</td>
-            <td>Random rollout Chain-of-Thought pairs used in ablation studies to benchmark against the main Med-REFL data, generated for the Llama3.1-8b model.</td>
-        </tr>
-    </tbody>
-</table>
 
 ## 📊 Performance
 Extensive experiments demonstrate that Med-REFL consistently and significantly enhances the medical reasoning capabilities across a diverse suite of large language models. On the primary **MedQA-USMLE** benchmark, our methodology yields a substantial average accuracy improvement of **+3.67%** across seven baseline modelsThe framework proves highly versatile, instilling sophisticated reasoning in general-purpose models like Llama3.1-8B (+5.82%), further augmenting models already specialized for medical reasoning such as Huatuo-o1 (+4.13%), and even refining reason-heavy models like Deepseek-Distill-8B (+6.15%).
@@ -319,19 +259,3 @@ Run the `evaluate-generate.py` script to have the model generate answers for the
 After generating the answers, run the `evaluate-verification.py` script to automatically score the outputs and calculate the accuracy.
 
 
-## 📖 Citation
-If you use our code, data, or weights in your research, please consider citing our paper:
-```
-@misc{yang2025medreflmedicalreasoningenhancement,
-      title={Med-REFL: Medical Reasoning Enhancement via Self-Corrected Fine-grained Reflection}, 
-      author={Zongxian Yang and Jiayu Qian and Zegao Peng and Haoyu Zhang and Zhi-An Huang},
-      year={2025},
-      eprint={2506.13793},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2506.13793}, 
-}
-```
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=TianYin123/Med-REFL&type=Date)](https://www.star-history.com/#TianYin123/Med-REFL&Date)
