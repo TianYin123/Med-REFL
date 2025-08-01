@@ -224,6 +224,12 @@ Med-REFL's effectiveness extends to other challenging medical benchmarks, demons
 ## 🛠️ Training
 We use [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory) for model training. Follow the steps below to reproduce our training setup.
 
+#### 0. Download Data
+Our Data in ”Data“ folder.
+```
+python A_merge_data.py
+```
+
 #### 1. Prepare the Data
 Our DPO dataset consists of two main parts. First, merge them into a single file for training using the provided script.
 ```bash
