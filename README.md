@@ -3,7 +3,7 @@
 
 ## ⚡ Introduction
 
-**Med-REFL** (Medical Reasoning Enhancement via self-corrected Fine-grained refLection) is a novel framework designed to enhance the complex reasoning capabilities of Large Language Models (LLMs) in the medical domain.
+**Med-REFL**  is a novel framework designed to enhance the complex reasoning capabilities of Large Language Models (LLMs) in the medical domain.
 
 Diverging from traditional methods, Med-REFL focuses on improving the model's **internal reflection process**. It leverages the Tree-of-Thought (ToT) paradigm to explore diverse reasoning pathways and automatically constructs a high-quality Direct Preference Optimization (DPO) dataset. This approach trains the model to identify flaws in its own reasoning and perform self-correction, thereby boosting accuracy and reliability on complex medical problems without the need for expensive expert annotation.
 
