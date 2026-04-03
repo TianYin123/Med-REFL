@@ -176,7 +176,55 @@ Use exactly this schema:
 ```
 
 ```txt
-GRPO Training Details:
-https://github.com/Qsingle/open-medical-r1
-with max length setting: 8192
+# GRPO Training Details:
+# https://github.com/Qsingle/open-medical-r1
+
+# Model arguments
+model_name_or_path: meta-llama/Llama-3.1-8B-Instruct
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+dataset_name: ./data/MedQA_5038
+dataset_configs:
+- all
+# Num processes is less by 1 as vLLM is using 1 GPU
+num_processes: 7
+
+# GRPO trainer config
+bf16: true
+use_vllm: true
+vllm_device: auto
+vllm_gpu_memory_utilization: 0.4
+do_eval: false
+eval_strategy: "no"
+eval_steps: 100
+gradient_accumulation_steps: 16
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+hub_strategy: every_save
+learning_rate: 2.0e-05
+log_level: info
+logging_steps: 5
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_prompt_length: 1024
+max_completion_length: 8192
+max_steps: -1
+num_generations: 3
+num_train_epochs: 6
+output_dir: data/Llama3.1-8b-GRPO-Ablation
+overwrite_output_dir: true
+per_device_eval_batch_size: 4   
+per_device_train_batch_size: 2
+push_to_hub: no
+report_to:
+- wandb
+save_strategy: "epoch"
+seed: 42
+warmup_ratio: 0.1
+cosine_max_len: 8192
+
 ```
