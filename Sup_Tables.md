@@ -175,21 +175,3 @@ Use exactly this schema:
 }
 ```
 
-
-```txt
-GRPO-Training Details
-
-Training Prompt:  "Please reason step by step, and put the final answer in \boxed{}"
-
-Verl parameters setting:
-
-Max prompt length: 2048 tokens
-Max response length: 8192 tokens
-Batch sizes: Train prompt 512, Generation prompt 1536, Mini-batch 32
-Responses per prompt: 8
-Temperature: 1.0, Top-p: 1.0, Top-k: -1 (vLLM rollout)
-Learning rate: 1e-6, Warmup steps: 10, Weight decay: 0.1
-Loss aggregation: Token-mean
-Gradient clipping: 1.0
-Entropy coefficient: 0
-```
