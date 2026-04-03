@@ -20,7 +20,7 @@ This table tests whether Med-REFL’s gains persist when the original multiple-c
 | GPQA-NOTA | 23.25 | **31.37** | 14.70 | **18.86** | 32.65 | **38.69** |
 
 ## Table 3. GRPO control using the same 5,038 seed questions.
-This table compares Med-REFL against continued GRPO training under a matched seed-question setting. Using the same 5,038 questions that provide usable reflection supervision, Med-REFL still outperforms GRPO, indicating that the gain is not explained simply by continuing optimization on additional data.
+This table compares Med-REFL against continued GRPO training under a matched seed-question setting. Using the same 5,038 questions that provide usable reflection supervision, Med-REFL still outperforms GRPO, indicating that the gain is not explained simply by continuing optimization on additional data. Training details follow open-medical-r1.
 
 | Method | Accuracy on MedQA |
 |---|---:|
@@ -175,3 +175,8 @@ Use exactly this schema:
 }
 ```
 
+```txt
+GRPO Training Details:
+https://github.com/Qsingle/open-medical-r1
+with max length setting: 8192
+```
